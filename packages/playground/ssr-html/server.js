@@ -31,6 +31,9 @@ async function createServer(
     logLevel: isTest ? 'error' : 'info',
     server: {
       middlewareMode: 'ssr',
+      hmr: {
+        host: "8.8.8.8",
+      },
       watch: {
         // During tests we edit the files too fast and sometimes chokidar
         // misses change events, so enforce polling for consistency
